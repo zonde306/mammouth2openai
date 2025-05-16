@@ -20,10 +20,8 @@ def setup():
             impersonate=rnet.Impersonate.Chrome133,
             proxies= [rnet.Proxy.all(defines.PROXIES)] if defines.PROXIES else [],
         )
-        client.set_cookies("https://mammouth.ai/", [
-            f"auth_session={cookie}",
-            "i18n_redirected=en",
-        ])
+        client.set_cookie("https://mammouth.ai/", rnet.Cookie("auth_session", cookie))
+        client.set_cookie("https://mammouth.ai/", rnet.Cookie("i18n_redirected", "en"))
         CLIENTS[cookie] = client
 
 async def get_client() -> rnet.Client:
