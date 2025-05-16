@@ -1,10 +1,10 @@
 @echo off
 
 REM 你的cookie，多个用半角逗号分隔，cookie名字为auth_session，登录后获取
-export COOKIES=
+set COOKIES=
 
 REM 连接用的密码
-export PASSWORD=
+set PASSWORD=
 
 REM 端口号
 set PORT=25100
