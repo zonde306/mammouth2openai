@@ -4,6 +4,9 @@ import blacksheep
 
 async def authorization(request: blacksheep.Request,
                         next_handler : Callable[[blacksheep.Request], Awaitable[blacksheep.Response]]) -> blacksheep.Response:
+    if not defines.PASSWORD:
+        return await next_handler(request)
+    
     token = request.headers.get_first(b"Authorization") or b""
     if token.startswith(b"Bearer "):
         token = token[7:]
