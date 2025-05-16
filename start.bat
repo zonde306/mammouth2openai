@@ -9,4 +9,4 @@ export PASSWORD=
 REM ¶Ë¿ÚºÅ
 set PORT=25100
 
-python -m uvicorn app:app --port %PORT%
+python -m uvicorn src.app:app --port %PORT%

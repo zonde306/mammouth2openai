@@ -9,4 +9,4 @@ export PASSWORD=
 # 端口号
 export PORT=25100
 
-python3 -m uvicorn app:app --port ${PORT}
+python3 -m uvicorn src.app:app --port ${PORT}
